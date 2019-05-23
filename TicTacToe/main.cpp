@@ -180,10 +180,6 @@ void TicTacToe::keyPress(sf::Vector2f pos) {
 }
 
 int main() {
-#ifndef _DEBUG
-	HideConsole();
-#endif
-
 	TicTacToe Game;
 
 	if (!Game.loadAssets()) {
@@ -197,6 +193,8 @@ int main() {
 		system("pause");
 		return 0;
 	}
+
+	HideConsole();
 
 	sf::RenderWindow window(sf::VideoMode(400, 600), "Tic Tac Toe");
 	while (window.isOpen()) {
